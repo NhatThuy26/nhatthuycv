@@ -53,26 +53,54 @@ const icon = toggleBtn.querySelector('i');
 
 function setMode(isLight) {
   if (isLight) {
-    document.body.classList.add('light-mode');
-    document.body.classList.remove('dark-mode');
+    document.body.classList.remove('light-mode');
+    document.body.classList.add('dark-mode');
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
   } else {
-    document.body.classList.remove('light-mode');
-    document.body.classList.add('dark-mode');
+    document.body.classList.remove('dark-mode');
+    document.body.classList.add('light-mode');
     icon.classList.remove('fa-sun');
     icon.classList.add('fa-moon');
   }
 }
 
-// Default: dark mode
-setMode(false);
+// Default: dark mode (icon mặt trời, nền xanh)
+setMode(true);
 
 toggleBtn.addEventListener('click', () => {
-  const isLight = !document.body.classList.contains('light-mode');
+  const isLight = !document.body.classList.contains('dark-mode');
   setMode(isLight);
 });
 
+// Sidebar toggle logic
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
 
+// Tạo backdrop để click ra ngoài sẽ đóng sidebar
+let backdrop = document.createElement('div');
+backdrop.className = 'sidebar-backdrop';
+document.body.appendChild(backdrop);
+
+function openSidebar() {
+  sidebar.classList.add('open');
+  backdrop.classList.add('active');
+}
+function closeSidebar() {
+  sidebar.classList.remove('open');
+  backdrop.classList.remove('active');
+}
+
+sidebarToggle.addEventListener('click', openSidebar);
+backdrop.addEventListener('click', closeSidebar);
+
+// Đóng sidebar khi click vào link và nhảy đến section ngay lập tức
+sidebar.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', function() {
+    closeSidebar();
+    // KHÔNG preventDefault, KHÔNG scrollIntoView, KHÔNG đổi hash
+    // Trình duyệt sẽ tự cuộn đến section qua anchor
+  });
+});
 
 

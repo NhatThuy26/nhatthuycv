@@ -10,7 +10,10 @@
 <body>
   <div id="particles-js"></div>
   <header>
-<nav class="navbar-vertical">
+<div class="sidebar-toggle" id="sidebarToggle">
+  <i class="fas fa-bars"></i>
+</div>
+<nav class="navbar-vertical" id="sidebar">
   <ul class="nav-links">
     <li><a href="#home">Trang chủ</a></li>
     <li><a href="#skills">Kỹ năng</a></li>
@@ -22,7 +25,7 @@
 </nav>
   </header>
 
-  <main class="hero">
+  <main class="hero" id="home">
     <div class="intro-image">
       <img class="avatar-circle" src="avatar.jpg" alt="Ảnh đại diện">
     </div>
@@ -35,7 +38,7 @@ Mục tiêu của tôi tích lũy kinh nghiệm thực tế và định hình r�
     </div>
   </main>
 
-  <section class="skills-section">
+  <section class="skills-section" id="skills">
   <h2>Kỹ năng</h2>
   <div class="skills-columns">
   <div>
@@ -103,7 +106,7 @@ Mục tiêu của tôi tích lũy kinh nghiệm thực tế và định hình r�
 </div>
 </section>
 
-<section class="interests-section">
+<section class="interests-section" id="interests">
   <h2>Sở thích</h2>
   <div class="interests-timeline">
     <div class="timeline-item">
@@ -133,7 +136,7 @@ Mục tiêu của tôi tích lũy kinh nghiệm thực tế và định hình r�
   </div>
 </section>
 
-<section class="projects-section">
+<section class="projects-section" id="projects">
   <h2>Dự án</h2>
   <div class="projects-container">
     <div class="project-box">
@@ -154,7 +157,7 @@ Mục tiêu của tôi tích lũy kinh nghiệm thực tế và định hình r�
   </div>
 </section>
 
-<section class="cert-journey-section">
+<section class="cert-journey-section" id="cert">
   <h2>Tóm tắt cá nhân</h2>
   <div class="cert-journey-cards">
     <div class="cert-card card-study">
@@ -188,7 +191,7 @@ Mục tiêu của tôi tích lũy kinh nghiệm thực tế và định hình r�
     </div>
   </div>
 </section>
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <h2><i class="fas fa-paper-plane"></i> Liên hệ Nhật Thúy</h2>
   <ul class="contact-list">
     <li>
@@ -220,7 +223,7 @@ Mục tiêu của tôi tích lũy kinh nghiệm thực tế và định hình r�
 <div class="toggle-mode">
   <i class="fas fa-moon"></i>
 </div>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
